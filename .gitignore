@@ -1,0 +1,83 @@
+# ======================================================
+# Node / Vue (health_client)
+# ======================================================
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# ======================================================
+# Java / Spring Boot (health_server)
+# ======================================================
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Build systems
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# IDEs
+.classpath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# ======================================================
+# Python / FastAPI (health_predict)
+# ======================================================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.h5
+*.onnx
+
+# Virtual environments
+venv/
+.env/
+.venv/
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# ======================================================
+# General IDEs and editors
+# ======================================================
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# ======================================================
+# OS / System files
+# ======================================================
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
