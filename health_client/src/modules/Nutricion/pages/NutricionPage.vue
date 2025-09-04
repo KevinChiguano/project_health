@@ -76,6 +76,8 @@
   
   <script>
   import axios from "axios";
+  import { analizarTexto } from "../helper/NutricionClient";
+  import { analizarFoto } from "../helper/NutricionClient";
   
   export default {
     name: "NutricionPage",
@@ -89,11 +91,9 @@
     methods: {
       async analizarTexto() {
         try {
-          const res = await axios.post("http://localhost:8080/API/nutricion/texto", {
-            descripcion: this.descripcion,
-          });
-          this.nutricion = res.data;
-          console.log(res.data)
+          const res = await analizarTexto(this.descripcion)
+          this.nutricion = res;
+          //console.log(res)
         } catch (error) {
           console.error("Error analizando texto", error);
         }
@@ -106,10 +106,10 @@
         const formData = new FormData();
         formData.append("file", this.file);
         try {
-          const res = await axios.post("http://localhost:8080/API/nutricion/foto", formData, {
-            headers: { "Content-Type": "multipart/form-data" },
-          });
-          this.nutricion = res.data;
+          const res = await analizarFoto(formData)
+
+          this.nutricion = res;
+          console.log(res.data)
         } catch (error) {
           console.error("Error analizando foto", error);
         }
